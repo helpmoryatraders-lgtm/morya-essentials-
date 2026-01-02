@@ -1,23 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Morya Essentials</title>
+<title>Morya Essentials | Pure by Faith</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-body{margin:0;height:100vh;background:#000;display:flex;justify-content:center;align-items:center;font-family:Georgia;color:#d4af37}
-.box{text-align:center}
-button{padding:14px 30px;margin:10px;background:#d4af37;border:none;font-size:18px;cursor:pointer}
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background:#050505;
+    color:#f5d77a;
+}
+header{
+    text-align:center;
+    padding:80px 20px;
+}
+h1{
+    font-size:42px;
+    letter-spacing:2px;
+}
+.tagline{
+    color:#c9a94a;
+    margin-top:10px;
+}
+.lang-btns button{
+    margin:15px;
+    padding:10px 25px;
+    background:#c9a94a;
+    border:none;
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+}
+nav{
+    display:none;
+    justify-content:center;
+    gap:25px;
+    padding:15px;
+    border-top:1px solid #333;
+    border-bottom:1px solid #333;
+}
+nav a{
+    color:#f5d77a;
+    text-decoration:none;
+    font-weight:600;
+}
+section{
+    display:none;
+    padding:40px 20px;
+    max-width:900px;
+    margin:auto;
+}
+.card{
+    border:1px solid #333;
+    padding:20px;
+    margin:15px 0;
+}
+footer{
+    text-align:center;
+    padding:30px;
+    color:#777;
+}
 </style>
 </head>
+
 <body>
-<div class="box">
-<h1>Morya Essentials</h1>
-<p>PURE BY FAITH</p>
-<button onclick="go()">English</button>
-<button onclick="go()">मराठी</button>
-</div>
+
+<header id="landing">
+    <h1>Morya Essentials</h1>
+    <div class="tagline">PURE BY FAITH</div>
+    <div class="lang-btns">
+        <button onclick="startSite()">Enter Site</button>
+    </div>
+</header>
+
+<nav id="menu">
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('products')">Products</a>
+    <a onclick="showSection('trust')">Trust</a>
+    <a onclick="showSection('purity')">Purity</a>
+    <a onclick="showSection('contact')">Contact</a>
+</nav>
+
+<section id="home">
+    <h2 id="festivalText"></h2>
+    <p>Premium temple-grade kapoor crafted for daily puja and sacred rituals.</p>
+</section>
+
+<section id="products">
+    <h2>Our Products</h2>
+    <div class="card">🕉 Mandir Grade Kapoor</div>
+    <div class="card">🌿 100% Pure Kapoor</div>
+    <div class="card">🌸 Daily Puja Kapoor</div>
+    <div class="card">🧪 Medical Grade Kapoor</div>
+</section>
+
+<section id="trust">
+    <h2>Trust & Faith</h2>
+    <p>We follow purity-first sourcing, chemical-free processing and faith-driven values.</p>
+</section>
+
+<section id="purity">
+    <h2>Purity Promise</h2>
+    <p>Clean burn, minimal residue, strong aroma – tested for religious and medicinal use.</p>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: moryaessentials@gmail.com</p>
+    <p>Business: Puja & Religious Essentials</p>
+</section>
+
+<footer>
+    © 2026 Morya Essentials
+</footer>
+
 <script>
-function go(){location.href="home.html";}
+function startSite(){
+    document.getElementById('landing').style.display="none";
+    document.getElementById('menu').style.display="flex";
+    showSection('home');
+}
+
+function showSection(id){
+    document.querySelectorAll('section').forEach(s=>s.style.display="none");
+    document.getElementById(id).style.display="block";
+}
+
+const festivals=[
+    {m:0,t:"Daily Puja Essentials"},
+    {m:8,t:"Ganesh Chaturthi Special"},
+    {m:10,t:"Diwali Sacred Kapoor"}
+];
+const d=new Date().getMonth();
+document.getElementById("festivalText").innerText=
+festivals.find(f=>f.m===d)?.t || "Pure by Faith";
 </script>
+
 </body>
-</html>
+  </html>
