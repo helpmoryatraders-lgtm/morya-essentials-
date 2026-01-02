@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pure By Faith</title>
+<style>
+body{
+margin:0;
+height:100vh;
+background:black;
+display:flex;
+align-items:center;
+justify-content:center;
+color:gold;
+font-family:Georgia;
+}
+.box{
+text-align:center;
+}
+button{
+margin:10px;
+padding:15px 30px;
+background:gold;
+border:none;
+font-size:18px;
+cursor:pointer;
+}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>PURE BY FAITH</h1>
+<p>Select Language</p>
+<button onclick="go()">English</button>
+<button onclick="go()">मराठी</button>
+</div>
+<script>
+function go(){
+localStorage.setItem("lang","selected");
+window.location="home.html";
+}
+</script>
+</body>
+</html>
