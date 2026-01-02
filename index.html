@@ -8,8 +8,18 @@
 <style>
 body{margin:0;font-family:Segoe UI;background:#0d0d0d;color:white}
 header{
-background:url('https://images.unsplash.com/photo-1601884996845-bde8c58e69c4') center/cover;
-height:100vh
+background:
+linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+url("https://images.unsplash.com/photo-1601884996845-bde8c58e69c4");
+background-size:cover;
+background-position:center;
+height:100vh;
+animation:bgZoom 20s infinite alternate;
+}
+  @keyframes bgZoom{
+from{background-size:100%}
+to{background-size:110%}
+  }
 }
 .overlay{background:rgba(0,0,0,.65);height:100%}
 nav{display:flex;justify-content:space-between;padding:15px 20px;position:fixed;width:100%}
@@ -26,7 +36,7 @@ nav{display:flex;justify-content:space-between;padding:15px 20px;position:fixed;
 
 <body>
 <nav>
-<div class="brand">Morya Traders</div>
+<div class="brand">Morya essentials</div>
 <div class="menu" onclick="openMenu()">☰</div>
 </nav>
 
@@ -41,7 +51,7 @@ nav{display:flex;justify-content:space-between;padding:15px 20px;position:fixed;
 <header>
 <div class="overlay">
 <div class="hero">
-<h1>Morya Traders</h1>
+<h1>Morya essentials </h1>
 <p>Pure by Faith</p>
 <a href="products.html">Explore Products</a>
 </div>
