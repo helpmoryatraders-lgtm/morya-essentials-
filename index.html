@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,79 +8,85 @@
 </head>
 <body>
 
-<!-- LANGUAGE SELECT -->
-<div id="lang">
+<!-- LANGUAGE SELECT SCREEN -->
+<div id="language">
   <h1>Morya Essentials</h1>
-  <p class="tag">Pure by Faith</p>
-  <button onclick="enter('en')">English</button>
-  <button onclick="enter('mr')">मराठी</button>
+  <p class="tagline">Pure by Faith</p>
+  <button onclick="enterSite()">English</button>
+  <button onclick="enterSite()">मराठी</button>
 </div>
 
-<!-- WEBSITE -->
-<div id="site" style="display:none">
+<!-- MAIN WEBSITE -->
+<div id="website" style="display:none">
 
 <header>
   <span class="logo">Morya Essentials</span>
-  <span class="menu" onclick="toggle()">☰</span>
+  <span class="menu" onclick="toggleMenu()">☰</span>
 </header>
 
 <nav id="nav">
-  <a onclick="show('home')">Home</a>
-  <a onclick="show('products')">Products</a>
-  <a onclick="show('contact')">Contact</a>
+  <a onclick="showPage('home')">Home</a>
+  <a onclick="showPage('products')">Products</a>
+  <a onclick="showPage('contact')">Contact</a>
 </nav>
 
 <section id="home" class="page">
   <h2>Camphor, Refined for Pure Devotion</h2>
-  <p>Mandir Grade • 100% Pure • Kolhapur</p>
+  <p>100% Pure • Mandir Grade • Kolhapur</p>
 </section>
 
 <section id="products" class="page">
   <h2>Our Products</h2>
+
   <div class="card">
     <h3>Loose Kapoor (100% Pure)</h3>
-    <button onclick="show('order')">Order</button>
+    <button onclick="showPage('order')">Order</button>
   </div>
+
 </section>
 
 <section id="order" class="page">
-  <h2>Place Order</h2>
+  <h2>Place Your Order</h2>
+
   <form action="mailto:help.moryaessentials@gmail.com" method="post">
-    <input placeholder="Your Name" required>
-    <input placeholder="Quantity" required>
-    <button type="submit">Submit</button>
+    <input type="text" placeholder="Your Name" required>
+    <input type="number" placeholder="Quantity" required>
+    <button type="submit">Submit Order</button>
   </form>
+
+  <p class="note">Our team will contact you shortly.</p>
 </section>
 
 <section id="contact" class="page">
-  <h2>Contact</h2>
+  <h2>Contact Us</h2>
   <p>Email: help.moryaessentials@gmail.com</p>
   <p>Kolhapur, Maharashtra</p>
 </section>
 
 <footer>
-  © Morya Essentials
+  © Morya Essentials • Pure by Faith
 </footer>
 
 </div>
 
 <script>
-function enter(l){
-  localStorage.lang=l;
-  document.getElementById("lang").style.display="none";
-  document.getElementById("site").style.display="block";
-  show('home');
+function enterSite(){
+  document.getElementById("language").style.display="none";
+  document.getElementById("website").style.display="block";
+  showPage('home');
 }
-function toggle(){
-  let n=document.getElementById("nav");
-  n.style.display=n.style.display=="block"?"none":"block";
+
+function toggleMenu(){
+  let nav=document.getElementById("nav");
+  nav.style.display = nav.style.display==="block" ? "none" : "block";
 }
-function show(id){
-  document.querySelectorAll('.page').forEach(p=>p.style.display="none");
+
+function showPage(id){
+  document.querySelectorAll(".page").forEach(p=>p.style.display="none");
   document.getElementById(id).style.display="block";
   document.getElementById("nav").style.display="none";
 }
 </script>
 
 </body>
-  </html>
+</html>
