@@ -2,141 +2,112 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Morya Essentials | Pure by Faith</title>
+<title>Morya Essentials – Pure By Faith</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Georgia', serif;
+}
+
 body{
-    margin:0;
-    font-family: 'Segoe UI', sans-serif;
-    background:#050505;
-    color:#f5d77a;
+  height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+    url('https://images.unsplash.com/photo-1604023489281-8b7c9b9b6f57?auto=format&fit=crop&w=1200&q=80');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#d4af37;
+  overflow:hidden;
 }
-header{
-    text-align:center;
-    padding:80px 20px;
+
+.container{
+  text-align:center;
+  animation:fadeIn 2.2s ease forwards;
 }
+
 h1{
-    font-size:42px;
-    letter-spacing:2px;
+  font-size:3.2rem;
+  letter-spacing:2px;
+  text-shadow:0 0 15px rgba(212,175,55,0.6);
+  animation:glow 3s infinite alternate;
 }
+
 .tagline{
-    color:#c9a94a;
-    margin-top:10px;
+  margin-top:12px;
+  font-size:1.1rem;
+  letter-spacing:3px;
+  color:#e6c76b;
+  opacity:0;
+  animation:fadeUp 1.5s ease forwards;
+  animation-delay:1s;
 }
-.lang-btns button{
-    margin:15px;
-    padding:10px 25px;
-    background:#c9a94a;
-    border:none;
-    color:#000;
-    font-weight:bold;
-    cursor:pointer;
+
+.btn{
+  margin-top:35px;
+  padding:14px 36px;
+  background:linear-gradient(135deg,#d4af37,#b8962e);
+  border:none;
+  color:#000;
+  font-weight:bold;
+  font-size:1rem;
+  letter-spacing:1px;
+  cursor:pointer;
+  border-radius:3px;
+  box-shadow:0 0 20px rgba(212,175,55,0.5);
+  opacity:0;
+  animation:fadeUp 1.5s ease forwards;
+  animation-delay:1.8s;
 }
-nav{
-    display:none;
-    justify-content:center;
-    gap:25px;
-    padding:15px;
-    border-top:1px solid #333;
-    border-bottom:1px solid #333;
+
+.btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 35px rgba(212,175,55,0.8);
 }
-nav a{
-    color:#f5d77a;
-    text-decoration:none;
-    font-weight:600;
-}
-section{
-    display:none;
-    padding:40px 20px;
-    max-width:900px;
-    margin:auto;
-}
-.card{
-    border:1px solid #333;
-    padding:20px;
-    margin:15px 0;
-}
+
 footer{
-    text-align:center;
-    padding:30px;
-    color:#777;
+  position:absolute;
+  bottom:20px;
+  font-size:0.85rem;
+  color:#888;
+  opacity:0;
+  animation:fadeIn 2s ease forwards;
+  animation-delay:2.5s;
+}
+
+/* Animations */
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes glow{
+  from{text-shadow:0 0 10px rgba(212,175,55,0.4);}
+  to{text-shadow:0 0 25px rgba(212,175,55,0.9);}
 }
 </style>
 </head>
 
 <body>
 
-<header id="landing">
-    <h1>Morya Essentials</h1>
-    <div class="tagline">PURE BY FAITH</div>
-    <div class="lang-btns">
-        <button onclick="startSite()">Enter Site</button>
-    </div>
-</header>
+<div class="container">
+  <h1>Morya Essentials</h1>
+  <div class="tagline">PURE BY FAITH</div>
+  <button class="btn" onclick="location.href='home.html'">Enter Site</button>
+</div>
 
-<nav id="menu">
-    <a onclick="showSection('home')">Home</a>
-    <a onclick="showSection('products')">Products</a>
-    <a onclick="showSection('trust')">Trust</a>
-    <a onclick="showSection('purity')">Purity</a>
-    <a onclick="showSection('contact')">Contact</a>
-</nav>
-
-<section id="home">
-    <h2 id="festivalText"></h2>
-    <p>Premium temple-grade kapoor crafted for daily puja and sacred rituals.</p>
-</section>
-
-<section id="products">
-    <h2>Our Products</h2>
-    <div class="card">🕉 Mandir Grade Kapoor</div>
-    <div class="card">🌿 100% Pure Kapoor</div>
-    <div class="card">🌸 Daily Puja Kapoor</div>
-    <div class="card">🧪 Medical Grade Kapoor</div>
-</section>
-
-<section id="trust">
-    <h2>Trust & Faith</h2>
-    <p>We follow purity-first sourcing, chemical-free processing and faith-driven values.</p>
-</section>
-
-<section id="purity">
-    <h2>Purity Promise</h2>
-    <p>Clean burn, minimal residue, strong aroma – tested for religious and medicinal use.</p>
-</section>
-
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: moryaessentials@gmail.com</p>
-    <p>Business: Puja & Religious Essentials</p>
-</section>
-
-<footer>
-    © 2026 Morya Essentials
-</footer>
-
-<script>
-function startSite(){
-    document.getElementById('landing').style.display="none";
-    document.getElementById('menu').style.display="flex";
-    showSection('home');
-}
-
-function showSection(id){
-    document.querySelectorAll('section').forEach(s=>s.style.display="none");
-    document.getElementById(id).style.display="block";
-}
-
-const festivals=[
-    {m:0,t:"Daily Puja Essentials"},
-    {m:8,t:"Ganesh Chaturthi Special"},
-    {m:10,t:"Diwali Sacred Kapoor"}
-];
-const d=new Date().getMonth();
-document.getElementById("festivalText").innerText=
-festivals.find(f=>f.m===d)?.t || "Pure by Faith";
-</script>
+<footer>© 2026 Morya Essentials</footer>
 
 </body>
-  </html>
+</html>
