@@ -1,29 +1,222 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Morya Essentials</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+
+/* BACKGROUND */
+body{
+  background:url('https://images.unsplash.com/photo-1604085572504-a3928d79d87a') no-repeat center/cover;
+  min-height:100vh;
+  color:#fff;
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 20px;
+  background:rgba(0,0,0,0.75);
+}
+.logo{font-size:22px;font-weight:bold;color:gold}
+
+/* MENU */
+.menu{
+  display:none;
+  flex-direction:column;
+  position:absolute;
+  top:60px;
+  right:20px;
+  background:#000;
+  border-radius:8px;
+  overflow:hidden;
+}
+.menu a{
+  padding:12px 20px;
+  color:#fff;
+  text-decoration:none;
+  border-bottom:1px solid #333;
+}
+.menu a:hover{background:#222}
+
+.dots{
+  font-size:26px;
+  cursor:pointer;
+}
+
+/* LANGUAGE */
+.lang{
+  padding:6px;
+  font-size:14px;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:70px 15px;
+  animation:fade 2s ease;
+}
+.hero h1{
+  font-size:34px;
+  color:gold;
+}
+.hero p{
+  font-size:18px;
+  margin-top:10px;
+}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* PRODUCT */
+.card{
+  background:rgba(0,0,0,0.8);
+  margin:20px;
+  padding:20px;
+  border-radius:14px;
+}
+.card h2{
+  color:gold;
+  font-size:24px;
+  margin-bottom:15px;
+}
+
+.card select,
+.card input,
+.card button{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  font-size:16px;
+}
+
+.card button{
+  background:gold;
+  border:none;
+  font-weight:bold;
+  cursor:pointer;
+}
+.card button:hover{background:#ffcc00}
+
+footer{
+  text-align:center;
+  padding:15px;
+  background:rgba(0,0,0,0.85);
+  font-size:14px;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h2>Morya Essentials</h2>
-  <nav>
-    <a href="home.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="purity.html">Purity</a>
-    <a href="trust.html">Trust</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <div class="logo">Morya Essentials</div>
+
+  <div>
+    <select class="lang" onchange="changeLang(this.value)">
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+      <option value="mr">Marathi</option>
+    </select>
+    <span class="dots" onclick="toggleMenu()">⋮</span>
+  </div>
+
+  <div class="menu" id="menu">
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Purity</a>
+    <a href="#">Contact</a>
+  </div>
 </header>
 
 <section class="hero">
-  <h1>PURE BY FAITH</h1>
-  <p>Premium Kapoor for Devotion</p>
+  <h1 id="title">PURE BY FAITH</h1>
+  <p id="subtitle">Premium Kapoor for Devotion</p>
 </section>
 
-<section class="festival" id="festival"></section>
+<section class="card">
+  <h2 id="product">Mandir Grade Kapoor</h2>
+
+  <form onsubmit="sendOrder(event)">
+    <select required>
+      <option value="">Select Purity</option>
+      <option>100% Pure</option>
+      <option>Temple Grade</option>
+      <option>Daily Puja Kapoor</option>
+      <option>Medical Kapoor</option>
+    </select>
+
+    <select required>
+      <option value="">Select Packet Size</option>
+      <option>5 Gram</option>
+      <option>10 Gram</option>
+      <option>25 Gram</option>
+      <option>50 Gram</option>
+    </select>
+
+    <input required placeholder="Quantity (Packets)">
+    <input required placeholder="Customer Name">
+    <input required placeholder="Mobile Number">
+
+    <button type="submit">ORDER NOW</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 Morya Essentials | Pure by Faith
+</footer>
+
+<script>
+function toggleMenu(){
+  const m=document.getElementById("menu");
+  m.style.display = m.style.display==="flex"?"none":"flex";
+}
+
+/* ORDER → GMAIL */
+function sendOrder(e){
+  e.preventDefault();
+  const f=e.target;
+  const body=`New Kapoor Order
+
+Product: Mandir Grade Kapoor
+Purity: ${f[0].value}
+Packet Size: ${f[1].value}
+Quantity: ${f[2].value}
+
+Customer Name: ${f[3].value}
+Mobile Number: ${f[4].value}`;
+
+  window.location.href =
+  "mailto:help.moryatraders@gmail.com?subject=New Website Order&body=" +
+  encodeURIComponent(body);
+}
+
+/* LANGUAGE */
+function changeLang(l){
+  if(l==="hi"){
+    title.innerText="श्रद्धा से शुद्ध";
+    subtitle.innerText="पूजा के लिए शुद्ध कपूर";
+    product.innerText="मंदिर ग्रेड कपूर";
+  }
+  if(l==="mr"){
+    title.innerText="श्रद्धेतून शुद्ध";
+    subtitle.innerText="पूजेसाठी शुद्ध कापूर";
+    product.innerText="मंदिर दर्जाचा कापूर";
+  }
+  if(l==="en"){
+    title.innerText="PURE BY FAITH";
+    subtitle.innerText="Premium Kapoor for Devotion";
+    product.innerText="Mandir Grade Kapoor";
+  }
+}
+</script>
 
 </body>
-</html>
+  </html>
