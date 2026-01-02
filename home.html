@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Morya Essentials</title>
+<style>
+body{margin:0;background:#000;color:#fff;font-family:Georgia}
+header{display:flex;justify-content:space-between;padding:15px;border-bottom:1px solid #d4af37}
+a{color:#d4af37;text-decoration:none;margin:0 10px}
+.hero{height:70vh;background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url('https://images.unsplash.com/photo-1601050690597-df0568f70950') center/cover;
+display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+h1{color:#d4af37;font-size:42px}
+.btn{margin-top:20px;padding:14px 30px;background:#d4af37;color:#000;text-decoration:none}
+</style>
+</head>
+<body>
+
+<header>
+<div>Morya Essentials</div>
+<div>
+<a href="home.html">Home</a>
+<a href="products.html">Products</a>
+<a href="trust.html">Purity</a>
+<a href="contact.html">Contact</a>
+</div>
+</header>
+
+<section class="hero">
+<h1 id="festival"></h1>
+<p>PURE BY FAITH</p>
+<a class="btn" href="products.html">Explore Products</a>
+</section>
+
+<script>
+const m=new Date().getMonth();
+let t="Daily Puja Essentials";
+if(m==8)t="Ganpati Special Kapoor";
+if(m==9)t="Navratri & Dasara Collection";
+if(m==10)t="Diwali Pure Kapoor";
+document.getElementById("festival").innerText=t;
+</script>
+
+</body>
+</html>
