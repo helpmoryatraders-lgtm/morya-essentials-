@@ -1,0 +1,11 @@
+body{margin:0;font-family:Arial;background:#faf9f6}
+#lang{text-align:center;padding:100px}
+.tag{color:#b59b5b}
+button{padding:10px 20px;margin:10px}
+header{display:flex;justify-content:space-between;padding:15px;background:#111;color:#fff}
+.menu{cursor:pointer}
+nav{display:none;background:#222}
+nav a{display:block;color:white;padding:10px;text-decoration:none}
+.page{display:none;padding:20px}
+.card{border:1px solid #ccc;padding:20px;margin:10px}
+footer{text-align:center;padding:15px;background:#111;color:#fff}
