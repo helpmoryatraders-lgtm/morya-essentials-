@@ -1,202 +1,55 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Morya Traders | Pure by Faith</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
-body{background:#0d0d0d;color:#fff}
-
-/* HEADER */
+body{margin:0;font-family:Segoe UI;background:#0d0d0d;color:white}
 header{
-  background:url('https://images.unsplash.com/photo-1601884996845-bde8c58e69c4');
-  background-size:cover;
-  background-position:center;
-  height:100vh;
-  position:relative;
+background:url('https://images.unsplash.com/photo-1601884996845-bde8c58e69c4') center/cover;
+height:100vh
 }
-.overlay{background:rgba(0,0,0,.65);height:100%;width:100%}
-
-nav{
-  position:fixed;top:0;width:100%;
-  display:flex;justify-content:space-between;
-  padding:15px 20px;z-index:10
-}
-.brand{font-size:28px;font-weight:bold;color:#ffd700}
+.overlay{background:rgba(0,0,0,.65);height:100%}
+nav{display:flex;justify-content:space-between;padding:15px 20px;position:fixed;width:100%}
+.brand{color:#ffd700;font-size:28px;font-weight:bold}
 .menu{font-size:30px;cursor:pointer}
-
-/* MENU */
-#menuBox{
-  position:fixed;right:-100%;
-  top:0;height:100vh;width:260px;
-  background:#111;transition:.4s;
-  padding:30px;z-index:20
-}
-#menuBox a{
-  display:block;margin:20px 0;
-  font-size:20px;color:#ffd700;
-  text-decoration:none
-}
-#menuBox a:hover{color:#fff}
-
-/* HERO */
-.hero{
-  height:100%;
-  display:flex;flex-direction:column;
-  justify-content:center;align-items:center;
-  text-align:center;padding:20px
-}
+#menu{position:fixed;right:-100%;top:0;height:100%;width:250px;background:#111;padding:30px;transition:.4s}
+#menu a{display:block;color:#ffd700;font-size:20px;margin:20px 0;text-decoration:none}
+.hero{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
 .hero h1{font-size:48px;color:#ffd700}
-.hero p{font-size:22px;margin:10px 0 30px}
-.hero button{
-  padding:14px 30px;
-  font-size:20px;border:none;
-  background:#ffd700;color:#000;
-  border-radius:30px;cursor:pointer
-}
-
-/* SECTIONS */
-section{padding:70px 20px}
-h2{font-size:36px;color:#ffd700;text-align:center;margin-bottom:40px}
-
-/* PRODUCTS */
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
-.card{
-  background:#1a1a1a;border-radius:15px;
-  padding:20px;text-align:center;
-  transition:.3s
-}
-.card:hover{transform:translateY(-10px)}
-.card img{
-  width:100%;height:200px;
-  object-fit:cover;border-radius:10px
-}
-.card h3{font-size:24px;margin:15px 0;color:#ffd700}
-.card p{font-size:18px}
-.card button{
-  margin-top:15px;padding:10px 20px;
-  background:#ffd700;border:none;
-  font-size:18px;border-radius:25px;
-  cursor:pointer
-}
-
-/* FORM */
-form{
-  max-width:500px;margin:auto;
-  background:#1a1a1a;
-  padding:25px;border-radius:15px
-}
-input,select,textarea{
-  width:100%;margin:10px 0;
-  padding:12px;font-size:18px;
-  border-radius:8px;border:none
-}
-form button{
-  width:100%;padding:14px;
-  font-size:20px;background:#ffd700;
-  border:none;border-radius:30px
-}
-
-/* FOOTER */
-footer{text-align:center;padding:20px;color:#aaa}
+.hero p{font-size:22px}
+.hero a{margin-top:20px;background:#ffd700;color:black;padding:14px 30px;border-radius:30px;text-decoration:none;font-size:20px}
 </style>
 </head>
 
 <body>
-
 <nav>
-  <div class="brand">Morya Traders</div>
-  <div class="menu" onclick="openMenu()">☰</div>
+<div class="brand">Morya Traders</div>
+<div class="menu" onclick="openMenu()">☰</div>
 </nav>
 
-<div id="menuBox">
-  <a href="#home" onclick="closeMenu()">Home</a>
-  <a href="#products" onclick="closeMenu()">Products</a>
-  <a href="#order" onclick="closeMenu()">Order</a>
-  <a href="#trust" onclick="closeMenu()">Trust & Purity</a>
-  <a href="#contact" onclick="closeMenu()">Contact</a>
+<div id="menu">
+<a href="index.html">Home</a>
+<a href="products.html">Products</a>
+<a href="trust.html">Trust & Purity</a>
+<a href="order.html">Order</a>
+<a href="contact.html">Contact</a>
 </div>
 
-<header id="home">
+<header>
 <div class="overlay">
-  <div class="hero">
-    <h1>Morya Traders</h1>
-    <p>Pure by Faith</p>
-    <button onclick="document.getElementById('products').scrollIntoView()">Explore Products</button>
-  </div>
+<div class="hero">
+<h1>Morya Traders</h1>
+<p>Pure by Faith</p>
+<a href="products.html">Explore Products</a>
+</div>
 </div>
 </header>
 
-<section id="products">
-<h2>Our Products</h2>
-<div class="products">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6">
-    <h3>Mandir Grade Kapoor</h3>
-    <p>100% Pure | Premium Quality</p>
-    <button onclick="goOrder()">Order Now</button>
-  </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1587731262875-0dbe58c8a5d4">
-    <h3>Daily Puja Kapoor</h3>
-    <p>Clean & Long Burning</p>
-    <button onclick="goOrder()">Order Now</button>
-  </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1620207418302-439b387441b0">
-    <h3>Medical Kapoor</h3>
-    <p>High Purity Medical Grade</p>
-    <button onclick="goOrder()">Order Now</button>
-  </div>
-</div>
-</section>
-
-<section id="order">
-<h2>Place Your Order</h2>
-<form action="mailto:help.moryatraders@gmail.com" method="post" enctype="text/plain">
-  <input type="text" name="Name" placeholder="Your Name" required>
-  <input type="tel" name="Mobile" placeholder="Mobile Number" required>
-  <select name="Product">
-    <option>Mandir Grade Kapoor</option>
-    <option>Daily Puja Kapoor</option>
-    <option>Medical Kapoor</option>
-  </select>
-  <select name="Purity">
-    <option>100% Pure</option>
-    <option>95%+</option>
-  </select>
-  <input type="number" name="Quantity" placeholder="Quantity (Kg)">
-  <textarea name="Message" placeholder="Message"></textarea>
-  <button type="submit">Place Order</button>
-</form>
-</section>
-
-<section id="trust">
-<h2>Trust & Purity</h2>
-<p style="text-align:center;font-size:20px;max-width:800px;margin:auto">
-We believe in faith, purity and honesty.  
-Our kapoor is trusted by temples, daily puja users and medical use.
-</p>
-</section>
-
-<section id="contact">
-<h2>Contact</h2>
-<p style="text-align:center;font-size:20px">
-📧 help.moryatraders@gmail.com
-</p>
-</section>
-
-<footer>
-© 2026 Morya Traders | Pure by Faith
-</footer>
-
 <script>
-function openMenu(){document.getElementById('menuBox').style.right='0'}
-function closeMenu(){document.getElementById('menuBox').style.right='-100%'}
-function goOrder(){document.getElementById('order').scrollIntoView()}
+function openMenu(){menu.style.right='0'}
 </script>
-
 </body>
-  </html>
+</html>
