@@ -3,20 +3,94 @@
 <head>
 <meta charset="UTF-8">
 <title>Products</title>
+
 <style>
-body{background:#000;color:#fff;font-family:Georgia}
-.card{border:1px solid #d4af37;margin:20px;padding:20px}
-h2{color:#d4af37}
+body{
+margin:0;
+background:#000;
+color:#fff;
+font-family:Georgia;
+}
+
+h1{
+text-align:center;
+color:#d4af37;
+margin:30px 0;
+font-size:32px;
+}
+
+.products{
+padding:20px;
+}
+
+.card{
+border:1px solid #d4af37;
+margin-bottom:25px;
+padding:20px;
+border-radius:6px;
+animation:slideUp 1s ease;
+}
+
+.card h2{
+color:#d4af37;
+font-size:24px;
+margin-bottom:10px;
+}
+
+.card p{
+font-size:16px;
+line-height:1.6;
+margin-bottom:15px;
+}
+
+.order{
+display:inline-block;
+padding:12px 30px;
+background:#d4af37;
+color:#000;
+text-decoration:none;
+font-size:16px;
+border-radius:4px;
+}
+
+@keyframes slideUp{
+from{opacity:0;transform:translateY(30px)}
+to{opacity:1;transform:translateY(0)}
+}
 </style>
 </head>
+
 <body>
 
-<h1 style="color:#d4af37;text-align:center">Our Products</h1>
+<h1>Our Products</h1>
 
-<div class="card"><h2>Mandir Grade Kapoor</h2><p>Temple quality, slow burning</p></div>
-<div class="card"><h2>100% Pure Kapoor</h2><p>Chemical free, natural</p></div>
-<div class="card"><h2>Daily Puja Kapoor</h2><p>Everyday worship</p></div>
-<div class="card"><h2>Medical Kapoor</h2><p>Traditional grade</p></div>
+<div class="products">
+
+<div class="card">
+<h2>Mandir Grade Kapoor</h2>
+<p>Specially crafted for temples. Long burning, strong fragrance, premium white crystals.</p>
+<a class="order" href="contact.html">Order Now</a>
+</div>
+
+<div class="card">
+<h2>100% Pure Kapoor</h2>
+<p>Chemical-free natural kapoor. Ideal for rituals, havan and daily pooja.</p>
+<a class="order" href="contact.html">Order Now</a>
+</div>
+
+<div class="card">
+<h2>Daily Puja Kapoor</h2>
+<p>Perfect for everyday worship. Smooth burning with peaceful aroma.</p>
+<a class="order" href="contact.html">Order Now</a>
+</div>
+
+<div class="card">
+<h2>Medical Kapoor</h2>
+<p>Traditional medicinal grade kapoor used in ayurvedic practices.</p>
+<a class="order" href="contact.html">Order Now</a>
+</div>
+
+</div>
 
 </body>
 </html>
