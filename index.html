@@ -2,96 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Pure By Faith</title>
+  <title>Morya Essentials | Pure By Faith</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Pure By Faith</h1>
-  <p>Premium Camphor for Devotion & Trust</p>
-</header>
-
-<section class="products">
-
-  <!-- PRODUCT 1 -->
-  <div class="card">
-    <img src="images/mandir.jpg">
-    <h2>Mandir Grade Kapoor</h2>
-    <p>Long burning, strong fragrance, temple quality.</p>
-
-    <input type="number" id="q1" placeholder="Quantity" min="1">
-    <input type="text" id="n1" placeholder="Your Name">
-    <input type="tel" id="m1" placeholder="Mobile Number">
-
-    <button onclick="order('Mandir Grade Kapoor','q1','n1','m1')">
-      Order Now
-    </button>
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="overlay">
+    <h1>Morya Essentials</h1>
+    <p id="festivalText">Pure By Faith</p>
+    <a href="#products" class="btn">Explore Products</a>
   </div>
-
-  <!-- PRODUCT 2 -->
-  <div class="card">
-    <img src="images/pure.jpg">
-    <h2>100% Pure Kapoor</h2>
-    <p>Chemical free, ideal for rituals & havan.</p>
-
-    <input type="number" id="q2" placeholder="Quantity" min="1">
-    <input type="text" id="n2" placeholder="Your Name">
-    <input type="tel" id="m2" placeholder="Mobile Number">
-
-    <button onclick="order('100% Pure Kapoor','q2','n2','m2')">
-      Order Now
-    </button>
-  </div>
-
-  <!-- PRODUCT 3 -->
-  <div class="card">
-    <img src="images/daily.jpg">
-    <h2>Daily Puja Kapoor</h2>
-    <p>Smooth burning for daily worship.</p>
-
-    <input type="number" id="q3" placeholder="Quantity" min="1">
-    <input type="text" id="n3" placeholder="Your Name">
-    <input type="tel" id="m3" placeholder="Mobile Number">
-
-    <button onclick="order('Daily Puja Kapoor','q3','n3','m3')">
-      Order Now
-    </button>
-  </div>
-
-  <!-- PRODUCT 4 -->
-  <div class="card">
-    <img src="images/medical.jpg">
-    <h2>Medical Kapoor</h2>
-    <p>Ayurvedic & medicinal grade camphor.</p>
-
-    <input type="number" id="q4" placeholder="Quantity" min="1">
-    <input type="text" id="n4" placeholder="Your Name">
-    <input type="tel" id="m4" placeholder="Mobile Number">
-
-    <button onclick="order('Medical Kapoor','q4','n4','m4')">
-      Order Now
-    </button>
-  </div>
-
 </section>
 
-<script>
-function order(product,q,n,m){
-  let qty=document.getElementById(q).value;
-  let name=document.getElementById(n).value;
-  let mob=document.getElementById(m).value;
+<!-- PRODUCTS -->
+<section id="products" class="products">
+  <h2>Our Premium Kapoor</h2>
 
-  if(!qty||!name||!mob){
-    alert("Please fill all details");
-    return;
-  }
+  <div class="product-grid">
 
-  let msg=`Order Details%0AProduct: ${product}%0AQuantity: ${qty}%0AName: ${name}%0AMobile: ${mob}`;
-  let phone="91XXXXXXXXXX"; // 👈 apna WhatsApp number
-  window.open(`https://wa.me/${phone}?text=${msg}`);
-}
-</script>
+    <div class="card">
+      <img src="images/mandir.jpg">
+      <h3>Mandir Grade Kapoor</h3>
+      <p>Long burning, strong fragrance, temple quality.</p>
+      <input type="number" placeholder="Quantity">
+      <input type="text" placeholder="Your Name">
+      <input type="tel" placeholder="Mobile Number">
+      <button onclick="orderNow('Mandir Grade Kapoor')">Order on WhatsApp</button>
+    </div>
 
+    <div class="card">
+      <img src="images/pure.jpg">
+      <h3>100% Pure Kapoor</h3>
+      <p>Chemical free, ideal for rituals & hawan.</p>
+      <input type="number" placeholder="Quantity">
+      <input type="text" placeholder="Your Name">
+      <input type="tel" placeholder="Mobile Number">
+      <button onclick="orderNow('100% Pure Kapoor')">Order on WhatsApp</button>
+    </div>
+
+    <div class="card">
+      <img src="images/daily.jpg">
+      <h3>Daily Puja Kapoor</h3>
+      <p>Smooth burning for daily worship.</p>
+      <input type="number" placeholder="Quantity">
+      <input type="text" placeholder="Your Name">
+      <input type="tel" placeholder="Mobile Number">
+      <button onclick="orderNow('Daily Puja Kapoor')">Order on WhatsApp</button>
+    </div>
+
+    <div class="card">
+      <img src="images/medical.jpg">
+      <h3>Medical Kapoor</h3>
+      <p>Ayurvedic & medicinal grade camphor.</p>
+      <input type="number" placeholder="Quantity">
+      <input type="text" placeholder="Your Name">
+      <input type="tel" placeholder="Mobile Number">
+      <button onclick="orderNow('Medical Kapoor')">Order on WhatsApp</button>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 Morya Essentials
+</footer>
+
+<script src="script.js"></script>
 </body>
-  </html>
+</html>
