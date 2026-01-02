@@ -3,22 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <title>Morya Essentials</title>
+
 <style>
-body{margin:0;background:#000;color:#fff;font-family:Georgia}
-header{display:flex;justify-content:space-between;padding:15px;border-bottom:1px solid #d4af37}
-a{color:#d4af37;text-decoration:none;margin:0 10px}
-.hero{height:70vh;background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+body{
+margin:0;
+background:#000;
+color:#fff;
+font-family:Georgia;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 20px;
+border-bottom:1px solid #d4af37;
+}
+
+.logo{
+color:#d4af37;
+font-size:22px;
+font-weight:bold;
+}
+
+.menu a{
+color:#d4af37;
+margin-left:15px;
+text-decoration:none;
+font-size:16px;
+}
+
+.hero{
+min-height:80vh;
+background:
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
 url('https://images.unsplash.com/photo-1601050690597-df0568f70950') center/cover;
-display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
-h1{color:#d4af37;font-size:42px}
-.btn{margin-top:20px;padding:14px 30px;background:#d4af37;color:#000;text-decoration:none}
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+animation:fadeIn 1.5s ease;
+}
+
+.hero h1{
+font-size:38px;
+color:#d4af37;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+letter-spacing:2px;
+margin-bottom:25px;
+}
+
+.btn{
+padding:14px 36px;
+background:#d4af37;
+color:#000;
+font-size:18px;
+text-decoration:none;
+border-radius:4px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#fff;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<div>Morya Essentials</div>
-<div>
+<div class="logo">Morya Essentials</div>
+<div class="menu">
 <a href="home.html">Home</a>
 <a href="products.html">Products</a>
 <a href="trust.html">Purity</a>
@@ -29,7 +95,7 @@ h1{color:#d4af37;font-size:42px}
 <section class="hero">
 <h1 id="festival"></h1>
 <p>PURE BY FAITH</p>
-<a class="btn" href="products.html">Explore Products</a>
+<a href="products.html" class="btn">Explore Products</a>
 </section>
 
 <script>
