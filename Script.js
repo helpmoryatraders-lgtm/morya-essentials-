@@ -1,19 +1,22 @@
-const festivals = [
-  "Pure By Faith",
-  "Ganpati Special Kapoor",
-  "Diwali Puja Essentials",
-  "Daily Puja Pure Kapoor",
-  "Trusted by Temples"
+function order(product){
+  let msg = `Order Request:
+Product: ${product}`;
+  window.open("https://wa.me/91XXXXXXXXXX?text=" + encodeURIComponent(msg));
+}
+
+const festival = document.getElementById("festival");
+const day = new Date().getDay();
+
+const fest = [
+  "Ganpati Bappa Morya 🙏",
+  "Pure Puja Day",
+  "Devotion & Faith",
+  "Temple Ritual Day",
+  "Spiritual Energy",
+  "Diwali Festival 🪔",
+  "Dasara Festival ⚔️"
 ];
 
-let i = 0;
-setInterval(() => {
-  document.getElementById("festivalText").innerText = festivals[i];
-  i = (i + 1) % festivals.length;
-}, 2500);
-
-function orderNow(product) {
-  const phone = "918767231315; // apna number
-  const msg = `Order for ${product}`;
-  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, "_blank");
+if(festival){
+  festival.innerHTML = `<h2>${fest[day]}</h2>`;
 }
