@@ -1,62 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Products - Morya Essentials</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+  <title>Products</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h2>Morya Essentials</h2>
+  <h1>Morya Essentials</h1>
   <nav>
     <a href="home.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="purity.html">Purity</a>
-    <a href="trust.html">Trust</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<section class="products">
+<div class="container products">
+  <div class="product-card">
+    <h3>Mandir Grade Kapoor</h3>
+    <p>Premium quality for temples</p>
+    <a href="order.html"><button>Order Now</button></a>
+  </div>
 
-<div class="product">
-<img src="images/mandir.jpg">
-<h3>Mandir Grade Kapoor</h3>
-<input placeholder="Quantity">
-<input placeholder="Your Name">
-<input placeholder="Mobile Number">
-<button onclick="order('Mandir Grade Kapoor')">Place Order</button>
+  <div class="product-card">
+    <h3>100% Pure Kapoor</h3>
+    <p>High purity devotional use</p>
+    <a href="order.html"><button>Order Now</button></a>
+  </div>
+
+  <div class="product-card">
+    <h3>Daily Puja Kapoor</h3>
+    <p>For regular worship</p>
+    <a href="order.html"><button>Order Now</button></a>
+  </div>
+
+  <div class="product-card">
+    <h3>Medical Kapoor</h3>
+    <p>Special medicinal grade</p>
+    <a href="order.html"><button>Order Now</button></a>
+  </div>
 </div>
-
-<div class="product">
-<img src="images/pure.jpg">
-<h3>100% Pure Kapoor</h3>
-<input placeholder="Quantity">
-<input placeholder="Your Name">
-<input placeholder="Mobile Number">
-<button onclick="order('100% Pure Kapoor')">Place Order</button>
-</div>
-
-<div class="product">
-<img src="images/daily.jpg">
-<h3>Daily Puja Kapoor</h3>
-<input placeholder="Quantity">
-<input placeholder="Your Name">
-<input placeholder="Mobile Number">
-<button onclick="order('Daily Puja Kapoor')">Place Order</button>
-</div>
-
-<div class="product">
-<img src="images/medical.jpg">
-<h3>Medical Kapoor</h3>
-<input placeholder="Quantity">
-<input placeholder="Your Name">
-<input placeholder="Mobile Number">
-<button onclick="order('Medical Kapoor')">Place Order</button>
-</div>
-
-</section>
 
 </body>
 </html>
