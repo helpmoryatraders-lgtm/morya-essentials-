@@ -1,22 +1,15 @@
-function order(product){
-  let msg = `Order Request:
-Product: ${product}`;
-  window.open("https://wa.me/91XXXXXXXXXX?text=" + encodeURIComponent(msg));
-}
-
-const festival = document.getElementById("festival");
-const day = new Date().getDay();
-
-const fest = [
-  "Ganpati Bappa Morya 🙏",
-  "Pure Puja Day",
-  "Devotion & Faith",
-  "Temple Ritual Day",
-  "Spiritual Energy",
+const festivals = [
   "Diwali Festival 🪔",
-  "Dasara Festival ⚔️"
+  "Ganesh Chaturthi 🐘",
+  "Navratri 🌸",
+  "Daily Puja Essentials 🙏"
 ];
 
-if(festival){
-  festival.innerHTML = `<h2>${fest[day]}</h2>`;
-}
+let i = 0;
+setInterval(() => {
+  const el = document.getElementById("festivalText");
+  if (el) {
+    el.innerText = festivals[i];
+    i = (i + 1) % festivals.length;
+  }
+}, 2500);
