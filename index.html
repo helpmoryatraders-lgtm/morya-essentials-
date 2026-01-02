@@ -1,113 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Morya Essentials – Pure By Faith</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: 'Georgia', serif;
-}
-
-body{
-  height:100vh;
-  background:
-    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
-    url('https://images.unsplash.com/photo-1604023489281-8b7c9b9b6f57?auto=format&fit=crop&w=1200&q=80');
-  background-size:cover;
-  background-position:center;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#d4af37;
-  overflow:hidden;
-}
-
-.container{
-  text-align:center;
-  animation:fadeIn 2.2s ease forwards;
-}
-
-h1{
-  font-size:3.2rem;
-  letter-spacing:2px;
-  text-shadow:0 0 15px rgba(212,175,55,0.6);
-  animation:glow 3s infinite alternate;
-}
-
-.tagline{
-  margin-top:12px;
-  font-size:1.1rem;
-  letter-spacing:3px;
-  color:#e6c76b;
-  opacity:0;
-  animation:fadeUp 1.5s ease forwards;
-  animation-delay:1s;
-}
-
-.btn{
-  margin-top:35px;
-  padding:14px 36px;
-  background:linear-gradient(135deg,#d4af37,#b8962e);
-  border:none;
-  color:#000;
-  font-weight:bold;
-  font-size:1rem;
-  letter-spacing:1px;
-  cursor:pointer;
-  border-radius:3px;
-  box-shadow:0 0 20px rgba(212,175,55,0.5);
-  opacity:0;
-  animation:fadeUp 1.5s ease forwards;
-  animation-delay:1.8s;
-}
-
-.btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 35px rgba(212,175,55,0.8);
-}
-
-footer{
-  position:absolute;
-  bottom:20px;
-  font-size:0.85rem;
-  color:#888;
-  opacity:0;
-  animation:fadeIn 2s ease forwards;
-  animation-delay:2.5s;
-}
-
-/* Animations */
-@keyframes fadeIn{
-  from{opacity:0;}
-  to{opacity:1;}
-}
-
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(20px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-@keyframes glow{
-  from{text-shadow:0 0 10px rgba(212,175,55,0.4);}
-  to{text-shadow:0 0 25px rgba(212,175,55,0.9);}
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Pure By Faith</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="container">
-  <h1>Morya Essentials</h1>
-  <div class="tagline">PURE BY FAITH</div>
-  <button class="btn" onclick="location.href='home.html'">Enter Site</button>
-</div>
+<header>
+  <h1>Pure By Faith</h1>
+  <p>Premium Camphor for Devotion & Trust</p>
+</header>
 
-<footer>© 2026 Morya Essentials</footer>
+<section class="products">
+
+  <!-- PRODUCT 1 -->
+  <div class="card">
+    <img src="images/mandir.jpg">
+    <h2>Mandir Grade Kapoor</h2>
+    <p>Long burning, strong fragrance, temple quality.</p>
+
+    <input type="number" id="q1" placeholder="Quantity" min="1">
+    <input type="text" id="n1" placeholder="Your Name">
+    <input type="tel" id="m1" placeholder="Mobile Number">
+
+    <button onclick="order('Mandir Grade Kapoor','q1','n1','m1')">
+      Order Now
+    </button>
+  </div>
+
+  <!-- PRODUCT 2 -->
+  <div class="card">
+    <img src="images/pure.jpg">
+    <h2>100% Pure Kapoor</h2>
+    <p>Chemical free, ideal for rituals & havan.</p>
+
+    <input type="number" id="q2" placeholder="Quantity" min="1">
+    <input type="text" id="n2" placeholder="Your Name">
+    <input type="tel" id="m2" placeholder="Mobile Number">
+
+    <button onclick="order('100% Pure Kapoor','q2','n2','m2')">
+      Order Now
+    </button>
+  </div>
+
+  <!-- PRODUCT 3 -->
+  <div class="card">
+    <img src="images/daily.jpg">
+    <h2>Daily Puja Kapoor</h2>
+    <p>Smooth burning for daily worship.</p>
+
+    <input type="number" id="q3" placeholder="Quantity" min="1">
+    <input type="text" id="n3" placeholder="Your Name">
+    <input type="tel" id="m3" placeholder="Mobile Number">
+
+    <button onclick="order('Daily Puja Kapoor','q3','n3','m3')">
+      Order Now
+    </button>
+  </div>
+
+  <!-- PRODUCT 4 -->
+  <div class="card">
+    <img src="images/medical.jpg">
+    <h2>Medical Kapoor</h2>
+    <p>Ayurvedic & medicinal grade camphor.</p>
+
+    <input type="number" id="q4" placeholder="Quantity" min="1">
+    <input type="text" id="n4" placeholder="Your Name">
+    <input type="tel" id="m4" placeholder="Mobile Number">
+
+    <button onclick="order('Medical Kapoor','q4','n4','m4')">
+      Order Now
+    </button>
+  </div>
+
+</section>
+
+<script>
+function order(product,q,n,m){
+  let qty=document.getElementById(q).value;
+  let name=document.getElementById(n).value;
+  let mob=document.getElementById(m).value;
+
+  if(!qty||!name||!mob){
+    alert("Please fill all details");
+    return;
+  }
+
+  let msg=`Order Details%0AProduct: ${product}%0AQuantity: ${qty}%0AName: ${name}%0AMobile: ${mob}`;
+  let phone="91XXXXXXXXXX"; // 👈 apna WhatsApp number
+  window.open(`https://wa.me/${phone}?text=${msg}`);
+}
+</script>
 
 </body>
-</html>
+  </html>
