@@ -8,17 +8,25 @@
 <style>
 body{margin:0;font-family:Segoe UI;background:#0d0d0d;color:white}
 header{
-background:
-linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-url("https://images.unsplash.com/photo-1601884996845-bde8c58e69c4");
-background-size:cover;
-background-position:center;
-height:100vh;
-animation:bgZoom 20s infinite alternate;
+  height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url("https://images.unsplash.com/photo-1601884996845-bde8c58e69c4");
+  background-size:cover;
+  background-position:center;
+  animation:bgMove 25s infinite alternate;
 }
-  @keyframes bgZoom{
-from{background-size:100%}
-to{background-size:110%}
+}
+  @keyframes bgMove{
+  from{
+    background-position:center top;
+    background-size:100%;
+  }
+  to{
+    background-position:center bottom;
+    background-size:110%;
+  }
+  }
   }
 }
 .overlay{background:rgba(0,0,0,.65);height:100%}
