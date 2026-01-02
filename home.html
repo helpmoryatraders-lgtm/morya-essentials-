@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pure By Faith</title>
+<style>
+body{margin:0;background:black;color:white;font-family:Georgia;}
+header{padding:15px;border-bottom:1px solid gold;}
+a{color:gold;margin:10px;text-decoration:none;}
+.hero{text-align:center;padding:60px;}
+h1{color:gold;}
+.btn{background:gold;color:black;padding:12px 25px;display:inline-block;}
+</style>
+</head>
+<body>
+
+<header>
+<a href="home.html">Home</a>
+<a href="products.html">Products</a>
+<a href="trust.html">Purity & Trust</a>
+<a href="contact.html">Contact</a>
+</header>
+
+<div class="hero">
+<h1 id="festival"></h1>
+<p>PURE BY FAITH</p>
+<a class="btn" href="products.html">Explore Products</a>
+</div>
+
+<script>
+const d=new Date().getMonth();
+let f="Daily Puja Day";
+if(d==8)f="Ganesh Chaturthi";
+if(d==9)f="Navratri & Dasara";
+if(d==10)f="Diwali Festival";
+document.getElementById("festival").innerText=f;
+</script>
+
+</body>
+</html>
