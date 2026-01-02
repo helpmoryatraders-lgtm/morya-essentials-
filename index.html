@@ -1,49 +1,85 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Morya Traders | Pure by Faith</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Morya Essentials | Pure by Faith</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-body{margin:0;font-family:Segoe UI;background:#0d0d0d;color:white}
-header{
-  height:100vh;
-  position:relative;
-  background:
-    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
-    url('https://images.unsplash.com/photo-1601884989645-bde8c58e69c4');
-  background-size:cover;
-  background-position:center;
-  animation:bgMove 25s infinite alternate;
+/* ---------- RESET ---------- */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Segoe UI", sans-serif;
 }
+
+/* ---------- BODY ---------- */
+body{
+  background:#000;
+  color:#fff;
 }
-}
-  @keyframes bgMove{
-  from{
-    background-position:center top;
-    background-size:100%;
-  }
-  to{
-    background-position:center bottom;
-    background-size:110%;
-  }
-  }
-  }
-}
-.overlay{
-  position:absolute;
+
+/* ---------- NAVBAR ---------- */
+nav{
+  position:fixed;
   top:0;
-  left:0;
+  width:100%;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.7);
+  z-index:1000;
+}
+
+.brand{
+  font-size:22px;
+  font-weight:bold;
+  color:#ffd700;
+}
+
+.menu{
+  font-size:26px;
+  cursor:pointer;
+}
+
+/* ---------- MENU ---------- */
+#menuBox{
+  position:fixed;
+  right:-100%;
+  top:0;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.65);
+  background:#000;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  transition:0.4s;
+  z-index:999;
 }
-nav{display:flex;justify-content:space-between;padding:15px 20px;position:fixed;width:100%}
-.brand{color:#ffd700;font-size:28px;font-weight:bold}
-.menu{font-size:30px;cursor:pointer}
-#menu{position:fixed;right:-100%;top:0;height:100%;width:250px;background:#111;padding:30px;transition:.4s}
-#menu a{display:block;color:#ffd700;font-size:20px;margin:20px 0;text-decoration:none}
+
+#menuBox a{
+  color:#ffd700;
+  text-decoration:none;
+  font-size:26px;
+  margin:12px 0;
+}
+
+/* ---------- HEADER ---------- */
+header{
+  position:relative;
+  height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+    url("https://images.unsplash.com/photo-1601084889545-ef6c3f2f5b38");
+  background-size:cover;
+  background-position:center;
+  animation:bgZoom 20s infinite alternate;
+}
+
+/* ---------- HERO ---------- */
 .hero{
   height:100%;
   display:flex;
@@ -51,54 +87,94 @@ nav{display:flex;justify-content:space-between;padding:15px 20px;position:fixed;
   justify-content:center;
   align-items:center;
   text-align:center;
-  gap:22px;
+  padding-top:70px; /* navbar fix */
 }
+
+/* ---------- TEXT ---------- */
 .hero h1{
-  font-size:38px;
+  font-size:46px;
   color:#ffd700;
-  line-height:1.35;
-  margin:0;
-       }    /* 👈 neeche space */
-  text-align:center;
+  margin-bottom:10px;
+  animation:fadeDown 1.4s ease;
 }
 
 .hero p{
-  font-size:22px;
-  margin-top:10px;
-  margin-bottom:32px;     /* 👈 button se gap */
-  letter-spacing:1px;     /* 👈 premium feel */
-  text-align:center;
+  font-size:20px;
+  letter-spacing:1px;
+  margin-bottom:35px;
+  animation:fadeUp 1.6s ease;
 }
-.hero a{margin-top:20px;background:#ffd700;color:black;padding:14px 30px;border-radius:30px;text-decoration:none;font-size:20px}
+
+/* ---------- BUTTON ---------- */
+.hero a{
+  background:#ffd700;
+  color:#000;
+  padding:14px 36px;
+  border-radius:40px;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:600;
+  animation:fadeUp 1.9s ease;
+  box-shadow:0 0 25px rgba(255,215,0,0.6);
+}
+
+.hero a:hover{
+  box-shadow:0 0 45px rgba(255,215,0,0.9);
+  transform:scale(1.05);
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeDown{
+  from{opacity:0; transform:translateY(-30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes bgZoom{
+  from{background-size:100%;}
+  to{background-size:110%;}
+}
 </style>
 </head>
 
 <body>
+
+<!-- NAV -->
 <nav>
-<div class="brand">Morya essentials</div>
-<div class="menu" onclick="openMenu()">☰</div>
+  <div class="brand">Morya Essentials</div>
+  <div class="menu" onclick="openMenu()">☰</div>
 </nav>
 
-<div id="menu">
-<a href="index.html">Home</a>
-<a href="products.html">Products</a>
-<a href="trust.html">Trust & Purity</a>
-<a href="order.html">Order</a>
-<a href="contact.html">Contact</a>
+<!-- MENU -->
+<div id="menuBox" onclick="closeMenu()">
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="trust.html">Trust & Purity</a>
+  <a href="order.html">Order</a>
+  <a href="contact.html">Contact</a>
 </div>
 
+<!-- HEADER -->
 <header>
-<div class="overlay">
-<div class="hero">
-<h1>Morya essentials </h1>
-<p>Pure by Faith</p>
-<a href="products.html">Explore Products</a>
-</div>
-</div>
+  <div class="hero">
+    <h1>Morya Essentials</h1>
+    <p>Pure by Faith</p>
+    <a href="products.html">Explore Products</a>
+  </div>
 </header>
 
 <script>
-function openMenu(){menu.style.right='0'}
+function openMenu(){
+  document.getElementById("menuBox").style.right="0";
+}
+function closeMenu(){
+  document.getElementById("menuBox").style.right="-100%";
+}
 </script>
+
 </body>
 </html>
