@@ -7,6 +7,86 @@
 body{background:#0d0d0d;color:white;font-family:Segoe UI;text-align:center;padding:50px}
 h1{color:#ffd700}
 p{font-size:22px}
+  body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: radial-gradient(circle at top, #111 0%, #000 60%);
+  color: #fff;
+}
+
+.contact-section {
+  max-width: 900px;
+  margin: auto;
+  padding: 70px 20px 60px;
+  text-align: center;
+}
+
+.contact-section h1 {
+  color: #ffd700;
+  font-size: 38px;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.contact-tagline {
+  color: #ddd;
+  font-size: 18px;
+  max-width: 520px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.contact-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  border-radius: 18px;
+  padding: 30px 20px;
+  margin-bottom: 35px;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.12);
+}
+
+.contact-item {
+  font-size: 17px;
+  margin: 14px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.contact-link {
+  color: #9fd3ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-link:hover {
+  color: #ffd700;
+  text-decoration: underline;
+}
+
+.map-box {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.18);
+}
+
+.map-box iframe {
+  width: 100%;
+  height: 260px;
+  border: 0;
+}
+
+@media (max-width: 600px) {
+  .contact-section h1 {
+    font-size: 30px;
+  }
+
+  .contact-item {
+    font-size: 16px;
+  }
+}
 </style>
 </head>
 
