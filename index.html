@@ -136,7 +136,30 @@ header{
   color:#4f6f5c; /* premium green */
   margin-top:6px;
 }
+/* ===== PREMIUM BOX FRAME ===== */
+.brand-frame{
+  display:inline-block;
+  padding:30px 40px;
+  border:2px solid rgba(212,175,55,0.6);
+  border-radius:14px;
+  background:rgba(255,255,255,0.25);
+  backdrop-filter:blur(6px);
+}
 
+.brand-frame h1{
+  font-size:46px;
+  margin:0;
+  letter-spacing:4px;
+  color:#2B1E0F;
+}
+
+.brand-frame span{
+  display:block;
+  font-size:38px;
+  color:#4f6f5c;
+  letter-spacing:6px;
+  margin-top:8px;
+  }
 .brand-title::after{
   content:"";
   display:block;
@@ -361,10 +384,12 @@ header{
 
 <!-- HEADER -->
   <header>
-  <div class="hero">
-    <h1 class="brand-title">
-  MORYA <span>ESSENTIALS</span>
-    </h1>
+<div class="brand-frame">
+  <h1>
+    MORYA
+    <span>ESSENTIALS</span>
+  </h1>
+</div>
     <p class="tagline">Pure by Faith</p>
     <a href="products.html" class="btn">View Products</a>
 
