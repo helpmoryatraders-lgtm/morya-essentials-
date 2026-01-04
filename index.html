@@ -21,16 +21,15 @@ body{
 }
 
 /* ---------- NAVBAR ---------- */
-nav{
+ .navbar{
   position:fixed;
   top:0;
+  left:0;
   width:100%;
-  padding:15px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:rgba(0,0,0,0.7);
-  z-index:1000;
+  z-index:999;
+  background:rgba(0,0,0,0.35); /* halka transparent */
+  backdrop-filter:blur(6px);
+}
 }
 
 .brand{
@@ -84,6 +83,9 @@ header{
 }
 
 /* ---------- TEXT ---------- */
+  .hero{
+  padding-top:160px;   /* navbar se gap */
+  }
 .hero h1{
   font-size:46px;
   color:#ffd700;
@@ -136,29 +138,72 @@ header{
   color:#4f6f5c; /* premium green */
   margin-top:6px;
 }
-/* ===== PREMIUM BOX FRAME ===== */
-.brand-frame{
+..brand-frame{
   display:inline-block;
-  padding:30px 40px;
-  border:2px solid rgba(212,175,55,0.6);
-  border-radius:14px;
-  background:rgba(255,255,255,0.25);
-  backdrop-filter:blur(6px);
+  padding:28px 38px;
+  border:1.5px solid rgba(212,175,55,0.7);
+  border-radius:16px;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(10px);
+  box-shadow:0 20px 50px rgba(0,0,0,0.45);
+}
 }
 
 .brand-frame h1{
-  font-size:46px;
+  font-size:44px;
   margin:0;
-  letter-spacing:4px;
-  color:#2B1E0F;
+  letter-spacing:5px;
+  color:#F5E6B0; /* soft gold */
 }
 
 .brand-frame span{
   display:block;
-  font-size:38px;
-  color:#4f6f5c;
-  letter-spacing:6px;
-  margin-top:8px;
+  font-size:36px;
+  letter-spacing:7px;
+  margin-top:6px;
+  color:#9FD0B8; /* premium green */
+}
+  /* ===== FINAL HERO CLEAN ===== */
+.hero{
+  min-height:100vh;
+  padding-top:140px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+/* ===== PREMIUM BRAND BOX ===== */
+.brand-frame{
+  padding:28px 38px;
+  border:2px solid rgba(212,175,55,0.7);
+  border-radius:18px;
+  background:rgba(0,0,0,0.35);
+  backdrop-filter:blur(8px);
+}
+
+.brand-frame h1{
+  margin:0;
+  font-size:44px;
+  letter-spacing:5px;
+  color:#F5E6B0;
+}
+
+.brand-frame h1 span{
+  display:block;
+  font-size:36px;
+  letter-spacing:7px;
+  color:#9FD0B8;
+  margin-top:6px;
+}
+
+/* ===== QUOTE ===== */
+.quote-en{
+  font-size:18px;
+  color:white;
+  font-style:italic;
+  margin-top:40px;
+  max-width:700px;
   }
 .brand-title::after{
   content:"";
