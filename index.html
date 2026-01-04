@@ -68,30 +68,19 @@ nav{
 }
 
 /* ---------- HEADER ---------- */
+    /* ---------- HEADER ---------- */
 header{
   position:relative;
   height:100vh;
-  background:
-    header{
-  position:relative;
-  height:100vh;
   background:#000;
-    }
   background-size:cover;
   background-position:center;
   animation:bgZoom 20s infinite alternate;
 }
+}
 
 /* ---------- HERO ---------- */
-.hero{
-  height:100%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding-top:70px; /* navbar fix */
-  background:#FFF7E1;
+  
 }
 
 /* ---------- TEXT ---------- */
@@ -107,19 +96,35 @@ header{
   letter-spacing:1px;
   margin-bottom:35px;
   animation:fadeUp 1.6s ease;
+/* ---------- TEXT ---------- */
+.hero h1{
+  font-size:46px;
+  color:#F5E6B0; /* soft gold */
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.hero .tagline{
+  color:#D6C58A;
+  font-size:18px;
+  letter-spacing:2px;
+  margin-bottom:35px;
 }
 
 /* ---------- BUTTON ---------- */
-.hero a{
-  background:#ffd700;
+.btn{
+  background:#FFD700;
   color:#000;
   padding:14px 36px;
   border-radius:40px;
   text-decoration:none;
   font-size:18px;
   font-weight:600;
-  animation:fadeUp 1.9s ease;
   box-shadow:0 0 25px rgba(255,215,0,0.6);
+}
+  animation:fadeUp 1.9s ease;
+
 }
 
 .hero a:hover{
@@ -299,35 +304,24 @@ header{
 </div>
 
 <!-- HEADER -->
-<header>
+  <header>
   <div class="hero">
     <h1>Morya Essentials</h1>
     <p class="tagline">Pure by Faith</p>
-  <a href="products.html" class="btn">View Products</a>
+    <a href="products.html" class="btn">View Products</a>
+
     <div class="faith-quote">
-  <div class="divider"></div>
+      <div class="divider"></div>
 
-  <p class="quote-en">
-    Faith begins with purity — and purity begins with Morya Essentials.
-  </p>
+      <p class="quote-en">
+        Faith begins with purity — and purity begins with Morya Essentials.
+      </p>
 
+      <div class="divider"></div>
     </div>
 
-  <!-- 🔽 YAHAN PASTE KARNA HAI 🔽 -->
-  <div class="faith-quote">
-  <div class="divider"></div>
-
-<p class="faith-line">
-  Faith begins with purity — and purity begins with Morya Essentials.
-</p>
-
-<div class="divider"></div>
-    
   </div>
-  <!-- 🔼 YAHAN TAK 🔼 -->
-
-    
-  </div>
+  </header>
 </header>
 
 <script>
