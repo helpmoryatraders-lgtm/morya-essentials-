@@ -98,15 +98,16 @@ header{
   animation:fadeUp 1.6s ease;
 }
 
-.quote-en{
+.hero .quote-en{
   font-size:18px;
   line-height:1.8;
-  color:#2f5d50;
+  color:#2f5d50 !important; /* PREMIUM GREEN */
   max-width:700px;
   margin:50px auto 0;
   font-style:italic;
   text-align:center;
   opacity:0.95;
+}
 
   }
 /* ---------- TEXT ---------- */
@@ -182,6 +183,15 @@ header{
   letter-spacing:2px;
   text-transform:uppercase;
   text-shadow:0 2px 6px rgba(0,0,0,0.15);
+  .hero h1::after{
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #2f5d50, #4f7f6a);
+  margin: 14px auto 0;
+  border-radius: 2px;
+    }
 }
 
 /* TAGLINE */
