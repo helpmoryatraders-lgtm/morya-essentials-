@@ -71,7 +71,6 @@ header{
   text-align:center;
   padding:160px 20px 80px;
 
-  /* SOFT TEMPLE BACKGROUND */
   background:
     radial-gradient(circle at top,
       rgba(255,215,160,0.18),
@@ -179,17 +178,35 @@ header{
   from{opacity:0; transform:translateY(15px);}
   to{opacity:1; transform:translateY(0);}
 }
+
+/* ===================== */
+/* ✅ CORRECTION CODE ONLY */
+/* ===================== */
+
+/* Extra safe space for fixed navbar */
+header{
+  padding-top:200px;
+}
+
+/* Mobile specific fix */
+@media (max-width:768px){
+  header{
+    padding-top:220px;
+  }
+
+  .brand-frame{
+    margin-top:20px;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="menu" onclick="openMenu()">☰</div>
 </nav>
 
-<!-- MENU -->
 <div id="menuBox" onclick="closeMenu()">
   <a href="index.html">Home</a>
   <a href="products.html">Products</a>
@@ -198,7 +215,6 @@ header{
   <a href="contact.html">Contact</a>
 </div>
 
-<!-- HERO -->
 <header>
   <div class="brand-frame">
     <h1>
@@ -230,4 +246,4 @@ function closeMenu(){
 </script>
 
 </body>
-  </html>
+</html>
