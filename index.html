@@ -18,47 +18,54 @@ body{
   background:#000;
   color:#fff;
 }
-  /* ===================== */
-/* PAGE HEIGHT & GAP FIX */
-/* ===================== */
+/* =============================== */
+/* FINAL MOBILE SPACE COMPRESSION */
+/* =============================== */
 
-/* Header ko compact banane ke liye */
+/* Header ko exact screen-fit */
 header{
-  min-height:auto;
-  padding-top:140px;
-  padding-bottom:60px;
+  min-height:calc(100vh - 70px);
+  padding-top:110px !important;
+  padding-bottom:40px !important;
+  justify-content:flex-start;
 }
 
-/* Brand box aur tagline ke beech gap kam */
+/* Brand box ko thoda upar lao */
 .brand-frame{
-  margin-bottom:14px;
+  margin-top:10px;
 }
 
-/* Button ke neeche extra space kam */
+/* Tagline gap kam */
+.tagline{
+  margin-top:14px;
+}
+
+/* Button ke niche zyada gap hatao */
 .btn{
-  margin-bottom:30px;
+  margin-top:22px;
 }
 
-/* Quote section compact */
+/* Quote ko bilkul paas lao */
 .faith-quote{
-  margin-top:40px;
+  margin-top:28px;
 }
 
-/* Divider spacing kam */
+/* Divider ka space kam */
 .divider{
-  margin:12px auto;
+  margin:10px auto;
 }
 
-/* Mobile specific tight layout */
-@media (max-width:768px){
-  header{
-    padding-top:130px;
-    padding-bottom:50px;
-  }
+/* Quote text compact */
+.quote-en{
+  font-size:16px;
+  line-height:1.6;
+}
 
-  .quote-en{
-    font-size:16px;
-    line-height:1.6;
+/* Mobile extra tight */
+@media (max-width:480px){
+  header{
+    padding-top:100px !important;
+    padding-bottom:30px !important;
   }
 }
 
