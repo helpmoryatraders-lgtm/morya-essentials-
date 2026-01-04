@@ -118,6 +118,39 @@ header{
   text-transform:uppercase;
   margin-bottom:10px;
 }
+  /* ===== PREMIUM BRAND TITLE ===== */
+.brand-title{
+  font-size:48px;
+  font-weight:700;
+  letter-spacing:4px;
+  color:#2B1E0F; /* temple brown */
+  text-align:center;
+  text-transform:uppercase;
+  position:relative;
+}
+
+.brand-title span{
+  display:block;
+  font-size:42px;
+  letter-spacing:6px;
+  color:#4f6f5c; /* premium green */
+  margin-top:6px;
+}
+
+.brand-title::after{
+  content:"";
+  display:block;
+  width:90px;
+  height:3px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    #d4af37,
+    transparent
+  );
+  margin:20px auto 0;
+  border-radius:3px;
+}
 
 .hero .tagline{
   color:#D6C58A;
@@ -329,7 +362,9 @@ header{
 <!-- HEADER -->
   <header>
   <div class="hero">
-    <h1>Morya Essentials</h1>
+    <h1 class="brand-title">
+  MORYA <span>ESSENTIALS</span>
+    </h1>
     <p class="tagline">Pure by Faith</p>
     <a href="products.html" class="btn">View Products</a>
 
